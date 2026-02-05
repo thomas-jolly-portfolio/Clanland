@@ -1,0 +1,48 @@
+name: Clanland
+main: com.pixelmon.europe.clanland.ClanlandPlugin
+version: 1.0.5
+author: Pixelmon Europe
+description: Chunk claim & flags for UClans 8.6.0 (1.12.2, Mohist)
+softdepend: [UltimateClans, PlaceholderAPI]
+commands:
+  clanland:
+    description: Ouvre le menu principal Clanland et ses sous-commandes
+    usage: /clanland [flags|declaim|reload|admin|fly|claim|visualize|setmsg|givewand|home|sethome]
+    aliases: [cl, clanlands]
+permissions:
+  clanland.command.use:
+    default: true
+    description: Autorise l'ouverture du GUI principal
+  clanland.command.claim:
+    default: true
+    description: Permet de claim un chunk
+  clanland.command.declaim:
+    default: true
+    description: Permet de unclaim un chunk
+  clanland.command.flags:
+    default: true
+    description: Permet de gérer les flags
+  clanland.command.visualize:
+    default: true
+    description: Permet d'activer la visualisation
+  clanland.command.setmsg:
+    default: true
+    description: Permet de changer les messages d'accueil
+  clanland.command.fly:
+    default: op
+    description: Permet d'activer le fly dans ses claims
+  clanland.command.reload:
+    default: op
+    description: Recharger la configuration
+  clanland.command.admin:
+    default: op
+    description: Admin mode, extra-chunks, declaim global
+  clanland.command.givewand:
+    default: op
+    description: Obtenir la baguette
+  clanland.command.home:
+    default: true
+    description: Se téléporter au spawn du clan
+  clanland.command.sethome:
+    default: true
+    description: Définir le spawn du clan (leader/coleader)

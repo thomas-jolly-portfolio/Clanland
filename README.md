@@ -1,2 +1,3 @@
-# Clanland
-Minecraft - Addon UltimateClans 8.6.0 Territory claiming system via GUI interface and commands, Claim purchases via the clan bank, Claim permissions (flags) via roles, Claim viewer via particles.
+# Clanland (Spigot 1.12.2)
+
+Build with Maven (Java 8). Place UltimateClans 8.6.0 and PlaceholderAPI 2.11.7 JARs in `libs/` (already included here).

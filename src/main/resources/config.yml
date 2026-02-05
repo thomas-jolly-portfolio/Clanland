@@ -1,0 +1,259 @@
+allowed-worlds: [ "world" ]
+min-distance-between-clans: 5
+
+auto-unclaim:
+  enabled: true
+  days-inactive: 30
+  check-interval: 12000
+
+claims:
+  must-be-contiguous: true
+  contiguous-bypass-level: 5
+
+economy:
+  currency-prefix: "$"
+  base: 125.0
+  multiplier: 1.25
+
+claim-limits-by-level:
+  default: 10
+  1: 10
+  2: 15
+  3: 20
+  4: 25
+  5: 30
+
+main-gui:
+  title: "&9Clanland"
+  items:
+    claim:
+      slot: 11
+      material: STAINED_GLASS
+      data: 5
+      name: "&aClaims"
+      lore:
+        - "&7Ouvre la carte des chunks"
+    flags:
+      slot: 13
+      material: BOOK
+      data: 0
+      name: "&bFlags"
+      lore:
+        - "&7Configurer les permissions par rôle"
+    info:
+      slot: 15
+      material: SIGN
+      data: 0
+      name: "&eInfos"
+      lore:
+        - "&7Claimés: %clanland_claimed%"
+        - "&7Max: %clanland_max%"
+        - "&7Prochain prix: %clanland_nextprice%"
+    visualize:
+      slot: 10
+      material: EYE_OF_ENDER
+      data: 0
+      name: "&eVisualiser"
+      lore:
+        - "&7Afficher les bordures"
+    messages:
+      slot: 16
+      material: PAPER
+      data: 0
+      name: "&6Messages"
+      lore:
+        - "&7Modifier les messages"
+
+claim-gui:
+  title: "&9Carte des chunks"
+  radius: 2
+  tooltip:
+    free:
+      name: "&aLibre ({x};{z})"
+      lore:
+        - "&7Prix: {price}"
+        - "&7Claims: &b{claimed}&7/&b{max}"
+        - "&7Clic gauche: Claim"
+    owned-self:
+      name: "&9Ton clan ({x};{z})"
+      lore:
+        - "&7Clan: {owner}"
+        - "&7Leader: {leader}"
+        - "&7Niveau: {level}"
+        - "&7Clic droit: Declaim"
+    owned-other:
+      name: "&cEnnemi ({x};{z})"
+      lore:
+        - "&7Clan: {owner}"
+        - "&7Leader: {leader}"
+        - "&7Niveau: {level}"
+
+uclans-gui:
+  inject-button: true
+  slot: 22
+  title: "&9Clanland"
+  name: "&bOuvrir Clanland"
+  material: NETHER_STAR
+  lore:
+    - "&7Gérer les claims et flags"
+
+item-visualizer:
+  enabled: true
+  material: GOLD_HOE
+  data: 0
+  name: "&6Baguette de Territoire"
+  lore:
+    - "&7Clic Gauche: &eVoir les bordures (ON/OFF)"
+    - "&7Clic Droit: &bOuvrir le menu Claims"
+
+flags:
+  list: [ "BUILD", "BREAK", "INTERACT", "INTERACT_ENTITY", "CONTAINER", "ITEM_USE", "PVP", "EXPLOSION", "CLAIM", "COLLIDE", "SPAWN" ]
+  default-role-flags:
+    visitor:
+      globals:
+        BUILD: false
+        BREAK: false
+        INTERACT: true      # Autorise boutons/portes
+        CONTAINER: false    # Interdit coffres
+        INTERACT_ENTITY: false
+        ITEM_USE: false
+        PVP: true           # Autorise le PvP contre les intrus
+        EXPLOSION: false
+        CLAIM: false
+        COLLIDE: true
+        SPAWN: false
+      items: {}
+    member:
+      globals:
+        BUILD: true
+        BREAK: true
+        INTERACT: true
+        CONTAINER: true
+        INTERACT_ENTITY: true
+        ITEM_USE: true
+        PVP: false
+        EXPLOSION: false
+        CLAIM: false
+        COLLIDE: true
+        SPAWN: true
+      items: {}
+    supermember:
+      globals:
+        BUILD: true
+        BREAK: true
+        INTERACT: true
+        CONTAINER: true
+        INTERACT_ENTITY: true
+        ITEM_USE: true
+        PVP: false
+        EXPLOSION: false
+        CLAIM: false
+        COLLIDE: true
+        SPAWN: true
+      items: {}
+    ultramember:
+      globals:
+        BUILD: true
+        BREAK: true
+        INTERACT: true
+        CONTAINER: true
+        INTERACT_ENTITY: true
+        ITEM_USE: true
+        PVP: false
+        EXPLOSION: false
+        CLAIM: false
+        COLLIDE: true
+        SPAWN: true
+      items: {}
+    recruiter:
+      globals:
+        BUILD: true
+        BREAK: true
+        INTERACT: true
+        CONTAINER: true
+        INTERACT_ENTITY: true
+        ITEM_USE: true
+        PVP: false
+        EXPLOSION: false
+        CLAIM: false
+        COLLIDE: true
+        SPAWN: true
+      items: {}
+    strategist:
+      globals:
+        BUILD: true
+        BREAK: true
+        INTERACT: true
+        CONTAINER: true
+        INTERACT_ENTITY: true
+        ITEM_USE: true
+        PVP: false
+        EXPLOSION: false
+        CLAIM: false
+        COLLIDE: true
+        SPAWN: true
+      items: {}
+    officer:
+      globals:
+        BUILD: true
+        BREAK: true
+        INTERACT: true
+        CONTAINER: true
+        INTERACT_ENTITY: true
+        ITEM_USE: true
+        PVP: false
+        EXPLOSION: false
+        CLAIM: false
+        COLLIDE: true
+        SPAWN: true
+        FLAGS_CHANGE: false
+      items: {}
+    moderator:
+      globals:
+        BUILD: true
+        BREAK: true
+        INTERACT: true
+        CONTAINER: true
+        INTERACT_ENTITY: true
+        ITEM_USE: true
+        PVP: false
+        EXPLOSION: false
+        CLAIM: true   # Peut claim
+        COLLIDE: true
+        SPAWN: true
+        FLAGS_CHANGE: false
+      items: {}
+    coleader:
+      globals:
+        BUILD: true
+        BREAK: true
+        INTERACT: true
+        CONTAINER: true
+        INTERACT_ENTITY: true
+        ITEM_USE: true
+        PVP: true
+        EXPLOSION: true
+        CLAIM: true
+        COLLIDE: true
+        SPAWN: true
+        FLAGS_CHANGE: true # Peut gérer les flags
+      items: {}
+    leader:
+      globals:
+        BUILD: true
+        BREAK: true
+        INTERACT: true
+        CONTAINER: true
+        INTERACT_ENTITY: true
+        ITEM_USE: true
+        PVP: true
+        EXPLOSION: true
+        CLAIM: true
+        COLLIDE: true
+        SPAWN: true
+        FLAGS_CHANGE: true
+      items: {}
+  flag-items:
+    - "PIXELMON_PC"
+    - "PIXELMON_HEALER"
+    - "PIXELMON_TRADING_MACHINE"
